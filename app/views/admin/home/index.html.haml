@@ -1,0 +1,10 @@
+
+- content_for :title do
+  Home
+
+- content_for :navigation do
+  = render :partial => "admin/navigation", :locals => { :current_path => admin_root_path }
+
+- content_for :body do
+  %p home
+  %p= controller.class.name

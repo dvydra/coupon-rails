@@ -1,0 +1,22 @@
+
+- content_for :title do
+  Coupons
+
+- content_for :navigation do
+  = render :partial => "admin/navigation", :locals => { :current_path => admin_coupons_path }
+
+- content_for :body do
+  %div
+    - if @coupons && !@coupons.empty?
+      %p= will_paginate @coupons
+      %table.coupons
+        %tr
+          %th Code
+          %th Campaign
+        - @coupons.each do |coupon|
+          %tr
+            %td= coupon.code
+            %td= coupon.campaign.name
+      %p= page_entries_info @coupons
+    - else
+      %p No coupons

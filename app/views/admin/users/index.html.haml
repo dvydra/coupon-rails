@@ -1,0 +1,16 @@
+
+- content_for :title do
+  Users
+
+- content_for :navigation do
+  = render :partial => "admin/navigation", :locals => { :current_path => admin_users_path }
+
+- content_for :body do
+  %div
+    - if @users && !@users.empty?
+      %table
+        - @users.each do |user|
+          %tr
+            %td= user.to_s
+    - else
+      %p No users

@@ -1,0 +1,20 @@
+!!! 5
+%html
+  %head
+    %title LP Shop - Facebook Coupon Management
+    = stylesheet_link_tag("admin/screen.css")
+
+  %body
+    #header-wrap
+      #header
+        %a#top{ :name => "top" }
+        %h1#logo-text
+          = link_to("Facebook Shop Coupon Management", admin_root_path)
+        %p#slogan Management of coupons for Facebook fans...
+        #nav
+          = yield :navigation
+
+    #content-wrap.clear
+      #content
+        %h2= yield :title
+        = yield :body

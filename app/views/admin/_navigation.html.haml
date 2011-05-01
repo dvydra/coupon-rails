@@ -1,0 +1,5 @@
+%ul
+  - Admin.admin_pages.each do |page|
+    - path = send("#{page[:path]}_path")
+    %li{ :id => (path == current_path) ? "current" : (page[:title].downcase.gsub(" ", "-") + "-link") }
+      = link_to(page[:title], path)

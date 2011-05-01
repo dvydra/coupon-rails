@@ -6,6 +6,8 @@ gem "rails", "3.0.7"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem "sqlite3", "~> 1.3"
+gem "haml", "~> 3.1"
+gem "will_paginate", "3.0.pre2"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -30,4 +32,10 @@ group :development, :test do
   gem "rspec-rails", "~> 2.5"
   gem "capybara", "~> 0.4"
   gem "cucumber-rails", "~> 0.4"
+  gem "database_cleaner", "~> 0.6"
+  gem "rr", "~> 1.0"
+  gem "machinist", "~> 1.0"
+  gem "pickle", "~> 0.4"
+  gem "launchy", "~> 0.4"
+  gem "faker", "~> 0.9"
 end

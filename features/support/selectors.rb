@@ -8,7 +8,19 @@ module HtmlSelectorsHelpers
   def selector_for(locator)
     case locator
 
-    when /the page/
+    when /the campaign list/
+      "table.campaigns"
+
+    when /the coupon list/
+      "table.coupons"
+
+    when /the admin navigation/
+      "#header > #nav > ul"
+
+    when /the page navigation/
+      "#content .pagination"
+
+    when /the page$/
       "html > body"
 
     # Add more mappings here.

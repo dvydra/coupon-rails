@@ -46,6 +46,16 @@ CouponRails::Application.routes.draw do
   #     resources :products
   #   end
 
+  namespace :admin do
+
+    root :to => "home#index"
+
+    resources :campaigns, :only => :index
+    resources :coupons, :only => :index
+    resources :users, :only => :index
+
+  end
+
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"

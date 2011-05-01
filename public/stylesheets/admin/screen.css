@@ -1,0 +1,16 @@
+/* theme screen stylesheets */
+
+/* import stylesheets and hide from IE/Mac \*/
+@import url("reset.css");
+@import url("coolblue.css");
+@import url("enhancements.css"); 
+/* end import/hide */
+
+.couponWrapper {color: #333; width: 522px; padding: 5px; background-color: #ffffff;}
+.couponWrapper p {margin:0; padding:0; line-height:auto;}
+.couponAvailability {background-color: #f7f7f7; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; margin-bottom:10px;}
+div.couponAvailability:hover {border:none; background-color: #ECEFF5; border-top: 1px solid #d8dfea; border-bottom: 1px solid #d8dfea;}
+.currentCoupon {background:#fff9d7;border: 1px solid #e2c822; margin-bottom:10px;}
+.currentCoupon img {border:0;}
+p.promoCode{display:block; text-align:center; margin-top:10px;}
+.couponWrapper, .couponAvailability, .currentCoupon {padding: 10px;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size: 12px;font-weight: normal;}
