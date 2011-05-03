@@ -8,6 +8,7 @@ gem "rails", "3.0.7"
 gem "sqlite3", "~> 1.3"
 gem "haml", "~> 3.1"
 gem "will_paginate", "3.0.pre2"
+gem "facebooker2", "0.0.11"
 
 # Use unicorn as the web server
 # gem 'unicorn'
