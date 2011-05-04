@@ -50,8 +50,9 @@ CouponRails::Application.routes.draw do
 
     root :to => "home#index"
 
-    resources :campaigns, :only => :index
-    resources :coupons, :only => :index
+    resources :campaigns, :only => :index do
+      resources :coupons, :only => :index
+    end
     resources :users, :only => :index
 
   end
