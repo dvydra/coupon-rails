@@ -7,6 +7,12 @@ describe Coupon do
     Coupon.make_unsaved(:code => "xyz").should be_valid
   end
 
+  it "should validate the uniqueness of code" do
+    Coupon.make(:code => "123")
+    Coupon.make_unsaved(:code => "321").should be_valid
+    Coupon.make_unsaved(:code => "123").should_not be_valid
+  end
+
   it "should validate the presence of campaign" do
     Coupon.make_unsaved(:campaign => nil).should_not be_valid
     Coupon.make_unsaved(:campaign => Campaign.make_unsaved).should be_valid

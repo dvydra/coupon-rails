@@ -36,9 +36,19 @@ describe Campaign do
       campaign.coupons.should have(100).coupons
     end
 
-    it "should add the coupons to the existing coupons"
+    it "should add the coupons to the campaign's existing coupons" do
+      campaign = Campaign.make
+      campaign.coupons.make
+      campaign.upload_coupons(Rails.root.join("features", "uploads", "coupons.csv"))
+      campaign.coupons.should have(101).coupons
+    end
 
-    it "should ignore duplicate coupons"
+    it "should ignore duplicate coupons" do
+      campaign = Campaign.make
+      campaign.coupons.make(:code => "SARAH-A62LwE")
+      campaign.upload_coupons(Rails.root.join("features", "uploads", "coupons.csv"))
+      campaign.coupons.should have(100).coupons
+    end
 
   end
 

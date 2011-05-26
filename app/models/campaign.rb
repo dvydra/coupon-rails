@@ -18,7 +18,6 @@ class Campaign < ActiveRecord::Base
     FasterCSV.foreach(path, :headers => [ :code ], :skip_blanks => true) do |coupon|
       Coupon.create(:code => coupon[:code], :campaign => self)
     end
-    reload
   end
 
 end
