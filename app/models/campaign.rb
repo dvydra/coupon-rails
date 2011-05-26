@@ -1,3 +1,6 @@
+
+require 'fastercsv'
+
 class Campaign < ActiveRecord::Base
 
   has_many :coupons
@@ -9,5 +12,13 @@ class Campaign < ActiveRecord::Base
   @@per_page = 10
 
   default_scope order("expiry_date")
+
+  def upload_coupons(coupons_file)
+    path = coupons_file.respond_to?(:path) ? coupons_file.path : coupons_file
+    FasterCSV.foreach(path, :headers => [ :code ], :skip_blanks => true) do |coupon|
+      Coupon.create(:code => coupon[:code], :campaign => self)
+    end
+    reload
+  end
 
 end

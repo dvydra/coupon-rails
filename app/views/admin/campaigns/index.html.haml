@@ -12,11 +12,17 @@
       %table.campaigns
         %tr
           %th Name
+          %th Expiry date
           %th Coupons
         - @campaigns.each do |campaign|
           %tr
-            %td= campaign.name
+            %td= link_to campaign.name, admin_campaign_path(campaign)
+            %td= campaign.expiry_date
             %td= campaign.coupons.count
       %p= page_entries_info @campaigns
     - else
       %p No campaigns
+
+  %div
+    %hr
+    %p= link_to "New campaign", new_admin_campaign_path

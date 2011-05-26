@@ -1,0 +1,21 @@
+
+- content_for :title do
+  New Campaign
+
+- content_for :navigation do
+  = render :partial => "admin/navigation", :locals => { :current_path => new_admin_campaign_path }
+
+- content_for :body do
+  %div
+    = form_for @campaign, :as => :campaign, :url => { :action => :create }, :html => { :multipart => true } do |f|
+      %table
+        %tr
+          %td= f.label :name, "Campaign name"
+          %td= f.text_field :name
+        %tr
+          %td= f.label :expiry_date, "Expiry date"
+          %td= f.text_field :expiry_date
+        %tr
+          %td= label_tag :coupons_file, "Coupons"
+          %td= file_field_tag :coupons_file
+      %div= f.submit "Create campaign"

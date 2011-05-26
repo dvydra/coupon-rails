@@ -64,6 +64,7 @@ GEM
       ruby-hmac
     faker (0.9.5)
       i18n (~> 0.4)
+    fastercsv (1.5.4)
     ffi (1.0.7)
       rake (>= 0.8.7)
     gherkin (2.3.6)
@@ -150,6 +151,7 @@ DEPENDENCIES
   database_cleaner (~> 0.6)
   facebooker2 (= 0.0.11)
   faker (~> 0.9)
+  fastercsv (= 1.5.4)
   haml (~> 3.1)
   launchy (~> 0.4)
   machinist (~> 1.0)

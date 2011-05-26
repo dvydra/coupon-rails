@@ -28,4 +28,18 @@ describe Campaign do
 
   end
 
+  describe "#upload_coupons" do
+
+    it "should load coupons from the provided CSV file" do
+      campaign = Campaign.make
+      campaign.upload_coupons(Rails.root.join("features", "uploads", "coupons.csv"))
+      campaign.coupons.should have(100).coupons
+    end
+
+    it "should add the coupons to the existing coupons"
+
+    it "should ignore duplicate coupons"
+
+  end
+
 end

@@ -14,6 +14,9 @@ module NavigationHelpers
     when /the (home\s?page)/
       '/'
 
+    when /the (admin campaign page) for "([^"]+)"/
+      admin_campaign_path(Campaign.find_by_name($2))
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
