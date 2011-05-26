@@ -18,6 +18,9 @@ Then /^I should see page (\d+) of \"([^"]+)\"'s coupons$/ do |page, campaign_nam
   campaign = Campaign.find_by_name(campaign_name)
   campaign.coupons.paginate(:page => page).each do |coupon|
     Then "I should see \"#{coupon.code}\" within the coupon list"
+    if coupon.user
+      Then "I should see \"#{coupon.user.facebook_id}\" within the coupon list"
+    end
   end
 end
 

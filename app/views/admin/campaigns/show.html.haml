@@ -22,9 +22,15 @@
       %table.coupons
         %tr
           %th Code
+          %th Assigned to
         - @coupons.each do |coupon|
           %tr
             %td= coupon.code
+            %td
+              - if coupon.user
+                = link_to coupon.user.facebook_id, admin_user_path(coupon.user)
+              - else
+                = "-"
       %p= page_entries_info @coupons
     - else
       %p No coupons

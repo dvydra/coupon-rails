@@ -8,9 +8,15 @@
 - content_for :body do
   %div
     - if @users && !@users.empty?
-      %table
+      %p= will_paginate @users
+      %table.users
+        %tr
+          %th Facebook ID
+          %th Coupons
         - @users.each do |user|
           %tr
-            %td= user.to_s
+            %td= link_to user.facebook_id, admin_user_path(user)
+            %td= user.coupons.count
+      %p= page_entries_info @campaigns
     - else
       %p No users

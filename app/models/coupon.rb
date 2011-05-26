@@ -1,6 +1,7 @@
 class Coupon < ActiveRecord::Base
 
   belongs_to :campaign
+  belongs_to :user
 
   validates_presence_of :code
   validates_uniqueness_of :code

@@ -18,6 +18,8 @@ Scenario: Administrator navigates a paginated list of campaigns
 Scenario: Administrator navigates to a campaign and pages through its coupons
    Given a campaign exists with name: "My Campaign"
      And 70 coupons exist with campaign: that campaign
+     And a user exists with facebook_id: "facebook-user"
+     And 1 coupon is assigned to the user "facebook-user"
      And I am on the admin campaigns page
     When I follow "My Campaign"
     Then I should be on the admin campaign page for "My Campaign"

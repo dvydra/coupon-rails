@@ -53,7 +53,7 @@ CouponRails::Application.routes.draw do
     resources :campaigns, :only => [ :index, :new, :create, :show ] do
       resources :coupons, :only => :index
     end
-    resources :users, :only => :index
+    resources :users, :only => [ :index, :show ]
 
   end
 

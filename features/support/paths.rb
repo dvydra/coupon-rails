@@ -17,6 +17,9 @@ module NavigationHelpers
     when /the (admin campaign page) for "([^"]+)"/
       admin_campaign_path(Campaign.find_by_name($2))
 
+    when /the (admin user page) for "([^"]+)"/
+      admin_user_path(User.find_by_facebook_id($2))
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

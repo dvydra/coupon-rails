@@ -1,0 +1,27 @@
+
+- content_for :title do
+  User:
+  = @user.facebook_id
+
+- content_for :navigation do
+  = render :partial => "admin/navigation", :locals => { :current_path => admin_user_path(@user) }
+
+- content_for :body do
+  %div
+    %table
+      %tr
+        %th Facebook ID
+        %td= @user.facebook_id
+  %h3 Coupons
+  %div
+    - if @coupons && !@coupons.empty?
+      %p= will_paginate @coupons
+      %table.coupons
+        %tr
+          %th Code
+        - @coupons.each do |coupon|
+          %tr
+            %td= coupon.code
+      %p= page_entries_info @coupons
+    - else
+      %p No coupons

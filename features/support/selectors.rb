@@ -14,6 +14,9 @@ module HtmlSelectorsHelpers
     when /the coupon list/
       "table.coupons"
 
+    when /the user list/
+      "table.users"
+
     when /the admin navigation/
       "#header > #nav > ul"
 

@@ -30,6 +30,12 @@ GEM
     activesupport (3.0.7)
     arel (2.0.9)
     builder (2.1.2)
+    capistrano (2.6.0)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     capybara (0.4.1.2)
       celerity (>= 0.7.9)
       culerity (>= 0.2.4)
@@ -70,6 +76,7 @@ GEM
     gherkin (2.3.6)
       json (>= 1.4.6)
     haml (3.1.1)
+    highline (1.6.2)
     httparty (0.7.7)
       crack (= 0.1.8)
     i18n (0.5.0)
@@ -87,6 +94,13 @@ GEM
     mime-types (1.16)
     mogli (0.0.28)
       httparty (>= 0.4.3)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.1.4)
+    net-ssh-gateway (1.1.0)
+      net-ssh (>= 1.99.1)
     nokogiri (1.4.4)
     pickle (0.4.7)
       cucumber (>= 0.8)
@@ -146,6 +160,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano (~> 2.6)
   capybara (~> 0.4)
   cucumber-rails (~> 0.4)
   database_cleaner (~> 0.6)
