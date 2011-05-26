@@ -10,12 +10,14 @@ gem "haml", "~> 3.1"
 gem "will_paginate", "3.0.pre2"
 gem "facebooker2", "0.0.11"
 gem "fastercsv", "1.5.4"
+gem "ruby-pg", "0.7.9.2008.01.28"
 
 # Use unicorn as the web server
 # gem 'unicorn'
 
 # Deploy with Capistrano
 gem "capistrano", "~> 2.6"
+gem "capistrano-ext", "~> 1.2"
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
